@@ -35,15 +35,14 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
 
-                        // PUBLIC
                         .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/users/**").hasRole("ADMIN")
                         .requestMatchers("/api/**").authenticated()
-                        // VEHICLE APIs
+
                         .requestMatchers("/api/vehicles/my").hasRole("USER")
                         .requestMatchers("/api/vehicles/all").hasRole("ADMIN")
                         .requestMatchers("/api/vehicles/**").authenticated()
 
-                        // SERVICE APIs
                         .requestMatchers("/api/services/my").hasRole("USER")
                         .requestMatchers("/api/services/add").hasRole("USER")
 
