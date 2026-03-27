@@ -2,6 +2,7 @@ package com.project.vehicletracker.service;
 
 import com.project.vehicletracker.entity.User;
 import com.project.vehicletracker.repository.UserRepository;
+import jakarta.annotation.Nonnull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -43,7 +44,7 @@ public class UserService {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    public User updateUser(Long id, User details) {
+    public User updateUser(Long id, @Nonnull User details) {
         User user = getUserById(id);
 
         user.setName(details.getName());
