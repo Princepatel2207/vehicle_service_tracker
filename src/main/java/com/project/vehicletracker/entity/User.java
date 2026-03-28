@@ -24,7 +24,7 @@ public class User {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
-    @Column(nullable = false)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String role;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
