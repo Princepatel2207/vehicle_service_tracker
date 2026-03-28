@@ -53,7 +53,7 @@ public class ServiceRecordService {
 
         record.setUser(user);
         record.setStatus(ServiceStatus.PENDING);
-        record.setCost(null); // user cannot set
+        record.setCost(null);
         record.setServiceDate(java.time.LocalDate.now());
         return recordRepo.save(record);
     }

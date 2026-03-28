@@ -24,12 +24,12 @@ public class ServiceRecord {
     @Enumerated(EnumType.STRING)
     private ServiceStatus status;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "vehicle_id", nullable = false)
     @JsonIgnoreProperties({"user","serviceRecords"})
     private Vehicle vehicle;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "service_type_id", nullable = false)
     private ServiceType serviceType;
 

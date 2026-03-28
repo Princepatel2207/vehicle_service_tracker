@@ -25,5 +25,5 @@ public class Vehicle {
 
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<com.project.vehicletracker.entity.ServiceRecord> serviceRecords;
+    private List<ServiceRecord> serviceRecords;
 }

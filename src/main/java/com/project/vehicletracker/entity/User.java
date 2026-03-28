@@ -28,6 +28,5 @@ public class User {
     private String role;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<com.project.vehicletracker.entity.Vehicle> vehicles;
+    private List<Vehicle> vehicles;
 }
