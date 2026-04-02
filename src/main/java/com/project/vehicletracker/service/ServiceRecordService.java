@@ -76,6 +76,7 @@ public class ServiceRecordService {
         }
 
         record.setDescription(input.getDescription());
+        record.setServiceType(input.getServiceType());
 
         return recordRepo.save(record);
     }
